@@ -1,0 +1,155 @@
+/* --- RESET COMPLET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligne le logo et le menu sur la même ligne */
+    padding: 10px 5%; /* Réduit un peu le padding pour gagner de la place */
+    background-color: #000000;
+    border-bottom: 2px solid #FFB7D5;
+    position: relative;
+    z-index: 1000;
+    min-height: 80px; /* Assure une hauteur stable */
+}
+
+/* Style de l'image du LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px; /* Ajuste cette valeur selon la taille voulue pour ton logo */
+    width: auto;
+    display: block;
+}
+
+/* --- MENU PRINCIPAL --- */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; /* Réduit un peu l'écart pour que tout tienne en largeur */
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 13px; /* Légèrement plus petit pour éviter les retours à la ligne */
+    transition: 0.3s;
+    white-space: nowrap; /* Empêche le texte de se couper en deux */
+}
+
+nav ul li a:hover {
+    color: #FFDE59;
+}
+
+/* --- BOUTONS JAUNES --- */
+.btn-flash {
+    background-color: #FFDE59;
+    color: #000000 !important;
+    padding: 8px 15px; 
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- SOUS-MENUS --- */
+.parent {
+    position: relative;
+}
+
+/* Pont invisible pour la souris */
+.parent::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px; 
+}
+
+.enfant {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1A1A1A;
+    min-width: 200px;
+    list-style: none;
+    border: 1px solid #333333;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+}
+
+.parent:hover .enfant {
+    display: block;
+}
+
+.enfant li {
+    display: block;
+    width: 100%;
+}
+
+.enfant li a {
+    display: block; 
+    padding: 12px 20px;
+    font-weight: normal;
+    color: #FFFFFF;
+    width: 100%;
+    border-bottom: 1px solid #252525;
+    background-color: #1A1A1A;
+}
+
+.enfant li:last-child a {
+    border-bottom: none;
+}
+
+.enfant li a:hover {
+    background-color: #252525;
+    color: #FFDE59;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #000000;
+    border-top: 1px solid #222222;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.social-links a {
+    color: #FFB7D5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
